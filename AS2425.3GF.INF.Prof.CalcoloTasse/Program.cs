@@ -1,4 +1,6 @@
-﻿namespace AS2425._3GF.INF.Prof.CalcoloTasse
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace AS2425._3GF.INF.Prof.CalcoloTasse
 {
     /// <summary>
     /// REDDITO IMPONIBILE (per scaglioni)	ALIQUOTA (per scaglioni)
@@ -17,7 +19,12 @@
             int aliquota = 0;
 
             Console.WriteLine("Digita il tuo reddito imponibile");
-            redditoImponibile = Convert.ToDouble(Console.ReadLine());
+
+            if (double.TryParse(Console.ReadLine(), out redditoImponibile) == false)
+            { 
+                Console.WriteLine("Il valore inserito deve essere strettamente numerico senza € lettere o altro");
+                return;
+            }
 
             if (redditoImponibile > 50000)
             {
