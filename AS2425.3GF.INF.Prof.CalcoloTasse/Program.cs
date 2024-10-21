@@ -47,6 +47,7 @@ namespace AS2425._3GF.INF.Prof.CalcoloTasse
             double tasse = redditoImponibile*(double)aliquota/100.0;
             Console.WriteLine($"Le tasse da pagare sono {tasse}");
 
+            Console.WriteLine($"Il reddito imponibile netto è {redditoImponibile - tasse}");
         }
     }
 }
